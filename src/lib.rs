@@ -497,6 +497,9 @@ impl<'a> PanicPrinter<'a> {
             self.print_backtrace()?;
         }
 
+        // Flush the stream
+        self.s.out.flush()?;
+
         Ok(())
     }
 
